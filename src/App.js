@@ -1,6 +1,10 @@
 import React from 'react';
+import DevTools from "mobx-react-devtools";
+import Counter, { AppState } from './Counter'
 import logo from './logo.svg';
 import './App.css';
+
+const state = new AppState()
 
 function App() {
   return (
@@ -9,6 +13,7 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
+          <Counter appState={state} />
         </p>
         <a
           className="App-link"
@@ -19,6 +24,7 @@ function App() {
           Learn React
         </a>
       </header>
+      <DevTools />
     </div>
   );
 }
