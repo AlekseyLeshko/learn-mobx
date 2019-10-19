@@ -16,16 +16,28 @@ export class AppState {
   }
 
   @action.bound
+  add5() {
+    this.count += 5;
+  }
+
+  @action.bound
   minus() {
     this.count--;
+  }
+
+  @action.bound
+  minus5() {
+    this.count -= 5;
   }
 }
 
 const Counter = observer(({ appState }) => (
   <React.Fragment>
+    <button onClick={appState.minus5}>-5</button>
+    <button onClick={appState.minus}>-1</button>
     <button onClick={appState.reset}>Counter: {appState.count}</button>
-    <button onClick={appState.add}>++</button>
-    <button onClick={appState.minus}>--</button>
+    <button onClick={appState.add}>+1</button>
+    <button onClick={appState.add5}>+5</button>
   </React.Fragment>
 ));
 
