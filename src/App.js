@@ -1,5 +1,5 @@
 import React from 'react';
-import DevTools from "mobx-react-devtools";
+// import DevTools from "mobx-react-devtools";
 import Counter, { AppState } from './Counter'
 import logo from './logo.svg';
 import './App.css';
@@ -24,7 +24,6 @@ function App() {
           Learn React
         </a>
       </header>
-      <DevTools />
     </div>
   );
 }
