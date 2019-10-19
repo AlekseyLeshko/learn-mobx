@@ -31,14 +31,20 @@ export class AppState {
   }
 }
 
-const Counter = observer(({ appState }) => (
-  <React.Fragment>
-    <button onClick={appState.minus5}>-5</button>
-    <button onClick={appState.minus}>-1</button>
-    <button onClick={appState.reset}>Counter: {appState.count}</button>
-    <button onClick={appState.add}>+1</button>
-    <button onClick={appState.add5}>+5</button>
-  </React.Fragment>
-));
+@observer
+class Counter extends React.Component {
+  render() {
+    const { appState } = this.props;
+    return (
+      <React.Fragment>
+        <button onClick={appState.minus5}>-5</button>
+        <button onClick={appState.minus}>-1</button>
+        <button onClick={appState.reset}>Counter: {appState.count}</button>
+        <button onClick={appState.add}>+1</button>
+        <button onClick={appState.add5}>+5</button>
+      </React.Fragment>
+    )
+  }
+}
 
 export default Counter
