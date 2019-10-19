@@ -28,11 +28,13 @@ class Lister extends React.Component {
   onClick = () => {
     const text = this.textInput.current.value
     if (!text.length) {
-      this.setState({ error: 'Please, enter text'})
+      this.setState({ error: 'Please, enter text' })
       return
     }
+
     this.props.state.add(text)
     this.textInput.current.value = ''
+    this.setState({ error: null })
   }
 
   render() {
