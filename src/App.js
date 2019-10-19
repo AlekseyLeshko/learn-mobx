@@ -1,10 +1,12 @@
 import React from 'react';
 // import DevTools from "mobx-react-devtools";
 import Counter, { AppState } from './Counter'
+import Lister, { ListerState } from './Lister'
 import logo from './logo.svg';
 import './App.css';
 
 const state = new AppState()
+const listerState = new ListerState()
 
 function App() {
   return (
@@ -17,6 +19,7 @@ function App() {
         <p>
           <Counter appState={state} />
         </p>
+        <Lister state={listerState} />
         <a
           className="App-link"
           href="https://reactjs.org"
